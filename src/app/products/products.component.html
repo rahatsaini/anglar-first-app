@@ -1,0 +1,11 @@
+<p>
+  products works!
+</p>
+
+<form  (ngSubmit)="onProductClick(f)" #f="ngForm">
+<input type="text" *ngIf="!isDisabled"  placeholder={{placeholder}} ngModel name="productName" required>
+
+<button *ngIf="!isDisabled" class="btn btn-primary"  >Add Products</button>
+
+</form>
+<app-product  (productClicked) ="OnremoveProduct(product)"   *ngFor="let product of products" [productName]="product"></app-product>
